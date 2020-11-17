@@ -1,10 +1,13 @@
 nav{
-	height: 12%;
+	height: 8%;
 	color: yellow;
 	background-color: #e73f4d;
-	width: 100%;
+	opacity: 1;
+	width: 90%;
+	margin-left: 5%;
 	position: fixed;
 	display: inline-block;
+	
 }
 
 ul {
@@ -15,18 +18,36 @@ ul {
 
 .link {
 	width: 10%;
-	border: 1px #e73f4d solid;
 	padding: 18px 0px 0px 0px;
 	display:block;
 }
 
+/*ANIMATE WELCOME*/
+#welcome{
+animation-name: move;
+animation-duration: 3s;
+animation-fill-mode: both;
+animation-delay: 2s;
+}
+
+/*KEYFRAMES*/
+
+@keyframes move{
+	from{transform: translateX(90vw);}
+	to{transform: translateX(0);}
+}
 
 
 
-.bodydiv {
-	background-image: linear-gradient(#fed8b1, lightblue);
+body {
+	background:
+	linear-gradient(330deg, hsla(41, 100%, 50%, 1) 15%, hsla(41, 100%, 50%, 0) 50%),
+	linear-gradient( 40deg, hsla(360, 100%, 50%, 1) 20%,hsla(360, 100%, 50%, 0) 70%),
+	linear-gradient(110deg, hsla(259, 100%, 50%, 1)20%,hsla(259, 100%, 50%, 0)66%),
+	linear-gradient(220deg, hsla(90, 100%, 50%, 1) 25%,hsla(96, 100%, 50%, 0) 80%);
 padding-bottom: 100px;
 }
+
 
 
 
@@ -50,23 +71,21 @@ h4 {
 	flex-direction: column;
 	text-align: center;
 	justify-content: center;
-	margin: 0% 10% 5% 10%;
-	padding-top: 5%;
+	margin: 2% 10% 5% 10%;
+	padding-top: 6%;
 		background-color: lightgray;
 }
 
 .gridbox{
 	display: grid;
 	grid-gap: 5%;
-	margin: 0% 10% 5% 10%;
+	margin: 5% 10% 5% 10%;
 	grid-template-columns: 30% 30% 30% ;
 	grid-template-rows: 10% 35% 10% 35%; 
 	grid-template-areas:
-  " . photoheading . "
-  "img1 img2 img3"
   " . adobe . "
   "imgs1 imgs2 imgs3";
-  align-items: center;
+  align-items: center
 }
 
 .photoheading {
@@ -88,17 +107,54 @@ h4 {
   max-height: 100%;
 }
 
-#img1 {
-	grid-area: img1;
-}
-#img2 {
-	grid-area: img2;
-	object-fit: contain;
-}
-#img3 {
-	grid-area: img3;
+#photoheading {
+	margin-top: 10%;
 }
 
+#photodiv {
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 10%;
+	margin-bottom: 20%;
+	height: 30vh;
+	display: flex;
+	transition: 0.5s;
+
+}
+
+
+.upsize {
+	transform: scale(1.5);	
+}
+
+
+#img1 {
+	opacity: 0.5;
+}
+#img1:hover{
+	opacity: 1;
+	transform: scale(1.5);	
+
+	
+}
+
+#img2 {
+	opacity: 0.5;
+}
+#img2:hover{
+	opacity: 1;
+	transform: scale(1.5);	
+
+}
+#img3 {
+	opacity: 0.5;
+
+}
+#img3:hover{
+	opacity: 1;
+	transform: scale(1.5);	
+
+}
 #imgs1 {
 	object-fit: cover;
   width: 100%;
@@ -125,3 +181,20 @@ object-fit: cover;
 	text-align: center;
 }
 
+@media screen and (max-width: 1000px){
+
+#photodiv {
+	flex-direction: column;
+	height: 60vh;
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 20%;
+	margin-bottom: 100%;
+
+}
+
+#imgs1{
+	transform: scale(0.5);
+}
+
+}
